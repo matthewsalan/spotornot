@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <%= link_to "Spot Or Not", '#', id: "logo" %>
+        <%= link_to "Spot Or Not", root_path, id: "logo" %>
       </div>
       <div class="col-md-6">
-        <%= form_tag("/etsy_search", method: "get", class: "search-form") do %>
+        <%= form_tag("/song_suggestions_show", method: "get", class: "search-form") do %>
           <%= text_field_tag(:q, params[:q], class: "search-field", placeholder: "Search for songs") %>
           <%= submit_tag("Search", class: "search-button btn btn-primary btn-sm") %>
         <% end %>
