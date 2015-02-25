@@ -44,6 +44,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.2.0.0)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -203,6 +205,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bootstrap-sass (= 3.2.0.0)
   byebug
   coffee-rails (~> 4.1.0)
   devise
@@ -212,7 +215,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.2.0)
   rspotify
-  sass-rails (~> 5.0)
+  sass-rails (= 5.0.1)
   sdoc (~> 0.4.0)
   spring
   sqlite3
