@@ -1,12 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+.btn-pad {
+  margin-top: 5px;
+}
+
 /* header */
 
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.6em;
   color: #fff;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -20,3 +31,33 @@
 .search-form {
   margin-top: 12px;
 }
+
+/* flash */
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
