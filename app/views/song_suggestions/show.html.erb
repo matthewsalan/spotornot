@@ -8,8 +8,17 @@
         <th>Song</th>
         <th>Artist</th>
         <th>Album</th>
+        <th></th>
       </tr>
-      <% @results.each do |l| %>
-      
+      <% @tracks.each do |l| %>
+      <tr>
+        <td><%= l.name %></td>
+        <td><%= l.artists.first.name %></td>
+        <td><%= l.album.name %></td>
+        <td><%= link_to "Suggest", '#', class: "btn btn-primary btn-xs" %></td>
+      </tr>
+      <% end %>
+    </thead>      
   </div>
+</table>
   
