@@ -1,8 +1,8 @@
 class SongSuggestion < ActiveRecord::Base
   belongs_to :user
   has_many :playlists
-
-  serialize :votes
+  has_many :votes
+  has_many :users, through: :votes
 end
 
 
