@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'playlists#index'
-<<<<<<< HEAD
   get 'song_suggestions/show'
   get 'song_suggestions/index'
-=======
   resources :song_suggestions, only: [:create, :destroy]
->>>>>>> master
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
