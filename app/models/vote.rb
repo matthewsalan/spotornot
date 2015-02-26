@@ -1,4 +1,4 @@
 class Vote < ActiveRecord::Base
   belongs_to :user
-  belongs_to :song_Suggestion
+  belongs_to :song_suggestion
 end

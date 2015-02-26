@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'playlists#index'
+  root 'song_suggestions#index'
   get 'song_suggestions/show'
   get 'song_suggestions/index'
   resources :song_suggestions, only: [:create, :destroy]
+  resources :votes, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
