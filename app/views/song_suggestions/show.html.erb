@@ -1,24 +1,31 @@
-<h1>Search Results:</h1>
-<br>
-<br>
-<table class="table table-hover">
-  <div class="listings">
-    <thead>
-      <tr>
-        <th>Song</th>
-        <th>Artist</th>
-        <th>Album</th>
-        <th></th>
-      </tr>
-      <% @tracks.each do |l| %>
-      <tr>
-        <td><%= l.name %></td>
-        <td><%= l.artists.first.name %></td>
-        <td><%= l.album.name %></td>
-        <td><%= link_to "Suggest", song_suggestions_path(id: l.id), method: :create, class: "btn btn-primary btn-xs" %></td>
-      </tr>
-      <% end %>
-    </thead>      
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Search Results:</h1>
+    </div>
+    <div id="preview" class="col-md-6">
+    </div>
   </div>
-</table>
-  
+  <br><br>
+  <table class="table table-hover">
+    <div class="listings">
+      <thead>
+        <tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th></th><th></th>
+        </tr>
+        <% @tracks.each do |l| %>
+        <tr id="<%=l.id %>">
+          <td><%= l.name %></td>
+          <td><%= l.artists.first.name %></td>
+          <td><%= l.album.name %></td>
+          <td class="preview"><%= link_to 'Preview', l.preview_url, class: 'video btn btn-primary btn-xs', remote: true%></td>
+          <td><%= link_to 'Suggest', song_suggestions_path(id: l.id), method: :create, class: 'btn btn-primary btn-xs' %></td>
+        </tr>
+        <% end %>
+      </thead>      
+    </div>
+  </table>
+</div>

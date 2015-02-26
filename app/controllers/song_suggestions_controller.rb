@@ -18,8 +18,11 @@ class SongSuggestionsController < ApplicationController
                 created_at: @this_week.created_at..@this_week.created_at + 1.weeks)
     if @playlist.size < 1
       @track = RSpotify::Track.find(params[:id])
-      @suggestion = SongSuggestion.create(user_id: current_user.id, artist: @track.artists.first.name,
-                                 title: @track.name, spotify_id: params[:id])
+      @suggestion = SongSuggestion.create(user_id: current_user.id,
+                                          artist: @track.artists.first.name,
+                                          title: @track.name,
+                                          spotify_id: params[:id],
+                                          preview: @track.preview_url)
       flash[:notice] = "The song #{@track.name} has been added to this week's suggestions."
     else
       flash[:alert] = "Sorry, #{@playlist.first.title} was already suggested this week."
