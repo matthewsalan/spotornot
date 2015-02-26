@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :song_suggestions
   has_many :votes
+  has_many :voted_songs, through: :votes, source: :song_suggestion
 end
