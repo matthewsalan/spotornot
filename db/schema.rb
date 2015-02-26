@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150226210815) do
     t.string   "artist"
     t.string   "title"
     t.string   "spotify_id"
-    t.boolean  "vetoed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "preview"
@@ -53,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150226210815) do
     t.integer  "song_suggestion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "veto",               default: false
   end
 
   add_index "votes", ["song_suggestion_id"], name: "index_votes_on_song_suggestion_id"
