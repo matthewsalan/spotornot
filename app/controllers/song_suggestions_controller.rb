@@ -8,7 +8,8 @@ class SongSuggestionsController < ApplicationController
   end
 
   def index
-    @songsuggestion = SongSuggestion.all
+   @song_suggestions = SongSuggestion.all
+   render :index
   end
 
   def create
