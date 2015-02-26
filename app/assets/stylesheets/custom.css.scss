@@ -61,3 +61,11 @@ body {
     color: #468847;
     text-align: left;
  }
+
+ /* song preview */
+
+ audio {
+  position: relative;
+  top: 50%;
+  transform: translateY(+100%);
+ }
