@@ -9,13 +9,13 @@
         <th>Artist</th>
         <th></th>
       </tr>
+    </thead>
       <% @song_suggestions.each do |l| %>
       <tr>
         <td><%= l.title %></td>
         <td><%= l.artist %></td>
       </tr>
       <% end %>
-    </thead>
   </div>
 </table>
 
