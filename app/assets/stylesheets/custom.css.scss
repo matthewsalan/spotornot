@@ -12,6 +12,10 @@ body {
   margin-top: 5px;
 }
 
+.table table-striped table-hover {
+  background-color: red;
+}
+
 /* header */
 
 #logo {
@@ -62,6 +66,10 @@ body {
     text-align: left;
  }
 
- .table table-striped table-hover {
-  background-color: red;
-}
+ /* song preview */
+
+ audio {
+  position: relative;
+  top: 50%;
+  transform: translateY(+100%);
+ }
