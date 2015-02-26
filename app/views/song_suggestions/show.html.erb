@@ -15,7 +15,7 @@
         <td><%= l.name %></td>
         <td><%= l.artists.first.name %></td>
         <td><%= l.album.name %></td>
-        <td><%= link_to "Suggest", '#', class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to "Suggest", song_suggestions_path(id: l.id), method: :create, class: "btn btn-primary btn-xs" %></td>
       </tr>
       <% end %>
     </thead>      
