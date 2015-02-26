@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+$(document).ready(function($) {
   var lastid;
   $(".video").click(function (e) {
     e.preventDefault();
