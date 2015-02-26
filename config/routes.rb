@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'song_suggestions/show'
   get 'song_suggestions/index'
   resources :song_suggestions, only: [:create, :destroy]
+  resources :votes, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
