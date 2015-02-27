@@ -15,18 +15,14 @@ class SongSuggestionsController < ApplicationController
 
   def index
     @vote = true
-    @week = Playlist.last
-    @list = SongSuggestion.where(
-      created_at: @week.created_at..@week.created_at + 1.weeks).
-      shuffle
+    @list = SongSuggestion.where(created_at: Playlist.last.range).shuffle
   end
 
   def create
     @week = Playlist.last
     @playlist = SongSuggestion.where(spotify_id: params[:id],
-                created_at: @week.created_at..@week.created_at + 1.weeks)
-    @votes = current_user.voted_songs.
-             where(created_at: @week.created_at..@week.created_at + 1.weeks)
+                created_at: @week.range)
+    @votes = current_user.voted_songs.where(created_at: @week.range)
     if @playlist.size < 1 && @votes.size <= 20
       @track = RSpotify::Track.find(params[:id])
       @song = SongSuggestion.create(user_id: current_user.id,
