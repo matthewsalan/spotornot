@@ -3,8 +3,7 @@ class VotesController < ApplicationController
 
   def create
     @week = Playlist.last
-    @votes = current_user.voted_songs.
-             where(created_at: @week.created_at..@week.created_at + 1.weeks)
+    @votes = current_user.voted_songs.where(created_at: @week.range)
     @song = SongSuggestion.find(params[:song_id])
     if @song.users.exclude?(current_user) && @votes.size <= 20
       @song.users << current_user
