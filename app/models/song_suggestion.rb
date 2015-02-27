@@ -1,6 +1,6 @@
 class SongSuggestion < ActiveRecord::Base
   belongs_to :user
-  has_many :playlists
+  belongs_to :playlist
   has_many :votes
   has_many :users, through: :votes
 end
