@@ -25,15 +25,20 @@ class SongSuggestionsController < ApplicationController
     @week = Playlist.last
     @playlist = SongSuggestion.where(spotify_id: params[:id],
                 created_at: @week.created_at..@week.created_at + 1.weeks)
-    if @playlist.size < 1
+    @votes = current_user.voted_songs.
+             where(created_at: @week.created_at..@week.created_at + 1.weeks)
+    if @playlist.size < 1 && @votes.size <= 20
       @track = RSpotify::Track.find(params[:id])
-      @suggestion = SongSuggestion.create(user_id: current_user.id,
+      @song = SongSuggestion.create(user_id: current_user.id,
                                           artist: @track.artists.first.name,
                                           title: @track.name,
                                           spotify_id: params[:id],
                                           album: @track.album.name,
                                           preview: @track.preview_url)
+      @song.users << current_user
       flash[:notice] = "The song #{@track.name} has been added to this week's suggestions."
+    elsif @votes.size > 20
+      flash[:alert] = "You've used all 20 of your votes already."
     else
       flash[:alert] = "Sorry, #{@playlist.first.title} was already suggested this week."
     end

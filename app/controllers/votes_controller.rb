@@ -9,6 +9,8 @@ class VotesController < ApplicationController
     if @song.users.exclude?(current_user) && @votes.size <= 20
       @song.users << current_user
       flash[:notice] = "Vote recorded."
+    elsif @votes.size > 20
+      flash[:alert] = "You've used all 20 of your votes already."
     else
       flash[:alert] = "You've already voted for that song!"
     end
