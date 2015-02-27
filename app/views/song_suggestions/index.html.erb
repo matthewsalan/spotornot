@@ -25,11 +25,11 @@
           <td class="preview"><%= link_to 'Preview', l.preview, class: 'video btn btn-primary btn-xs', remote: true%></td>
           <% if @vote %>
             <% unless l.votes.find_by(veto: true) %>
-            <td><%= link_to 'Vote', votes_path(song_id: l.id), method: :create, class: 'btn btn-primary btn-xs' %></td>
+              <td><%= link_to 'Vote', votes_path(song_id: l.id), method: :create, class: 'btn btn-primary btn-xs' %></td>
               <td><%= link_to 'Veto', vetoes_path(id: l.id), method: :create, class: 'btn btn-primary btn-xs' %></td>
             <% else %>
-            <td bgcolor="red"></td>
-            <td bgcolor="red" style="color:white" >VETOED</td>
+              <td bgcolor="red"></td>
+              <td bgcolor="red" style="color:white" >VETOED</td>
             <% end %>
           <% else %>
             <td><%= link_to 'Suggest', song_suggestions_path(id: l.spotify_id), method: :create, class: 'btn btn-primary btn-xs' %></td>
