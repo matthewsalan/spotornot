@@ -28,8 +28,8 @@
               <td><%= link_to 'Vote', votes_path(song_id: l.id), method: :create, class: 'btn btn-primary btn-xs' %></td>
               <td><%= link_to 'Veto', vetoes_path(id: l.id), method: :create, class: 'btn btn-primary btn-xs' %></td>
             <% else %>
-              <td bgcolor="red"></td>
-              <td bgcolor="red" style="color:white" >VETOED</td>
+              <td ><%= image_tag 'veto.png' %></td>
+              <td ><%= image_tag 'veto.png' %></td>
             <% end %>
           <% else %>
             <td><%= link_to 'Suggest', song_suggestions_path(id: l.spotify_id), method: :create, class: 'btn btn-primary btn-xs' %></td>
