@@ -1,7 +1,8 @@
 class PlaylistsController < ApplicationController
 
   def index
-    @voted = Vote.all.where(veto: false)
+    @week = Playlist.all[-2]
+    @voted = @week.song_suggestions
     render :index
   end
 end

@@ -19,11 +19,10 @@
         </tr>
         <tr>
         <% @voted.each do |v| %>
-          <% song = SongSuggestion.find_by(:id => v.song_suggestion_id) %>
-            <td><%= song.title.to_s %></td>
-            <td><%= song.artist.to_s %></td>
-            <td><%= song.album.to_s %></td>
-            <td class="preview"><%= link_to 'Preview', song.preview, class: 'video btn btn-primary btn-xs', remote: true%></td>
+            <td><%= v.title %></td>
+            <td><%= v.artist %></td>
+            <td><%= v.album %></td>
+            <td class="preview"><%= link_to 'Preview', v.preview, class: 'video btn btn-primary btn-xs', remote: true%></td>
         </tr>
         <% end %> 
       </thead>
