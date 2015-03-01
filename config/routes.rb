@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'song_suggestions#index'
   get 'song_suggestions/show'
   get 'song_suggestions/index'
+  get 'playlists/index'
   resources :vetoes, only: [:create]
   resources :song_suggestions, only: [:create, :destroy]
   resources :votes, only: [:create]

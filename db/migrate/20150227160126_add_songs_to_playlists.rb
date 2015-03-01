@@ -1,4 +1,4 @@
-class AddSongstoplaylists < ActiveRecord::Migration
+class AddSongsToPlaylists < ActiveRecord::Migration
   def change
     add_column :song_suggestions, :playlist_id, :integer
   end
