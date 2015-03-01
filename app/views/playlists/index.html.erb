@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Weekly Playlist:</h1> 
+    </div>
+    <div id="preview" class="col-md-6">
+    </div>
+  </div>
+  <br>
+  <br>
+  <table class="table table-hover">
+    <div class="listings">
+      <thead>
+        <tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th></th><th></th><th></th>
+        </tr>
+        <tr>
+        <% @voted.each do |v| %>
+          <% song = SongSuggestion.find_by(:id => v.song_suggestion_id) %>
+            <td><%= song.title.to_s %></td>
+            <td><%= song.artist.to_s %></td>
+            <td><%= song.album.to_s %></td>
+            <td class="preview"><%= link_to 'Preview', song.preview, class: 'video btn btn-primary btn-xs', remote: true%></td>
+        </tr>
+        <% end %> 
+      </thead>
+    </div>
+  </table>
+</div>
+<%= link_to 'Home', song_suggestions_index_path, class: 'btn btn-primary btn-xs' %></td>
