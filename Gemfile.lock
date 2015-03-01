@@ -51,6 +51,9 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    clockwork (1.1.0)
+      activesupport
+      tzinfo
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -62,6 +65,11 @@ GEM
     columnize (0.9.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.0.3)
+      activerecord (>= 3.0, < 5.0)
+      delayed_job (>= 3.0, < 4.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -213,7 +221,9 @@ DEPENDENCIES
   better_errors
   bootstrap-sass (= 3.2.0.0)
   byebug
+  clockwork
   coffee-rails (~> 4.1.0)
+  delayed_job_active_record
   devise
   jbuilder (~> 2.0)
   jquery-rails
