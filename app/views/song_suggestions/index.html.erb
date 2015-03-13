@@ -39,5 +39,12 @@
       </thead>
     </div>
   </table>
+  <div class="apple_pagination">
+    <div class="current">
+      <%= will_paginate @list %>
+    </div>
+  </div>
+  <div class="current_playlist">
+    <%= link_to 'Current Playlist', playlists_index_path, class: 'btn btn-primary btn-xs' %></td>
+  </div>
 </div>
-<%= link_to 'Current Playlist', playlists_index_path, class: 'btn btn-primary btn-xs' %></td>

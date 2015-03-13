@@ -9,6 +9,7 @@ class SongSuggestionsController < ApplicationController
                   album: t.album.name, preview: t.preview_url, id: 1}
         @list << OpenStruct.new(temp)
       end
+      @list = @list.paginate(:page => params[:page], :per_page => 10)
     end
     render :index
   end

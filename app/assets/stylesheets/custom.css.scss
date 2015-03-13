@@ -73,3 +73,19 @@ body {
   top: 50%;
   transform: translateY(+100%);
  }
+
+ /******** pagination ********/
+
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  cursor: default;
+  font-family: "Lucida Grande"
+
+}
+
+.current_playlist {
+  padding-top: 3em;
+}
+
