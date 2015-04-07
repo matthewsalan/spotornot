@@ -1,6 +1,6 @@
 == README
 
-Project app for Rails engineering class ath The Iron Yard.  Spotify API gem used to create weekly playlists from suggested songs by users.
+Project app for Rails engineering class at The Iron Yard.  Spotify API gem used to create weekly playlists from suggested songs by users.
 
 * Rails 4.2.0
 
